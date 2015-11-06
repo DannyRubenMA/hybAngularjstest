@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="bcApp" ng-controller="mainController as controller">
+<head>
+<!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<link rel="stylesheet" type="text/css" href="css/foundation.css">
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/bcapp.css"> -->
+
+<script src="js/libs/modernizr.js"></script>
+
+<title>BCFoundationDesktop</title>
+</head>
+<body>
+
+	<div class="off-canvas-wrap" data-offcanvas>
+		<div class="inner-wrap">
+
+			<nav class="tab-bar">
+				<section class="left-small">
+					<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+				</section>
+
+				<section class="middle tab-bar-section">
+					<img height="auto" width="60%" src="/img/app-contatti-logo.png">
+				</section>
+			</nav>
+
+			<!-- Off Canvas Menu -->
+			<aside class="left-off-canvas-menu">
+				<!-- whatever you want goes here -->
+				<ul>
+					<li><label>BCFoundation</label></li>
+					<li><a ui-sref="contacts">Contacts</a></li>
+				</ul>
+			</aside>
+
+			<div class="content" ui-view></div>
+
+			<!-- close the off-canvas menu -->
+			<a class="exit-off-canvas"></a>
+
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="js/libs/jquery.js"></script>
+	<script src="js/libs/fastclick.js"></script>
+	<script src="js/libs/foundation.js"></script>
+	<script src="js/libs/foundation.offcanvas.js"></script>
+
+	<script type="text/javascript" src="js/libs/angular.js"></script>
+	<script type="text/javascript" src="js/libs/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/libs/ui-router.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<!-- 	<script type="text/javascript" src="js/angular/routes.js"></script> -->
+	<script type="text/javascript" src="js/angular/states.js"></script>
+	<script type="text/javascript" src="js/angular/controllers.js"></script>
+
+
+</body>
+</html>
